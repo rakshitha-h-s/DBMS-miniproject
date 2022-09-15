@@ -4,7 +4,6 @@ from email.mime import image
 from struct import pack
 from PIL import Image,ImageTk
 from tkinter import messagebox
-
 from ctypes.wintypes import RGB
 from turtle import bgcolor, left
 import mysql.connector
@@ -108,7 +107,7 @@ def stu():
     sem7Button.pack()
 stuButton = Button(root,text='STUDENT',command=stu).place(x=100,y=300)
 
-def fac():
+def fac():                               
     root3 = Tk()
     root3.title('FACULTY TIMETIBLE')
     root3.geometry('1000x1000')
@@ -130,7 +129,6 @@ def fac():
         tree.heading('10_to_11',text='10_to_11',anchor=tk.CENTER)
         tree.heading('11_to_12',text='11_to_12',anchor=tk.CENTER)
         tree.heading('12_to_1',text='12_to_1',anchor=tk.CENTER)
-     
         tree.heading('2_to_3',text='2_to_3',anchor=tk.CENTER)
         tree.heading('3_to_4',text='3_to_4',anchor=tk.CENTER)
         tree.heading('4_to_5',text='4_to_5',anchor=tk.CENTER)
@@ -139,7 +137,6 @@ def fac():
         tree.column('10_to_11',width=100,anchor=tk.CENTER)
         tree.column('11_to_12',width=100,anchor=tk.CENTER)
         tree.column('12_to_1',width=100,anchor=tk.CENTER)
-        
         tree.column('2_to_3',width=100,anchor=tk.CENTER)
         tree.column('3_to_4',width=100,anchor=tk.CENTER)
         tree.column('4_to_5',width=100,anchor=tk.CENTER)
@@ -181,7 +178,6 @@ def fac():
         tree.pack()
     button2 = Button(root3,text='NAVYA AB',command=cns)
     button2.pack()
-
     def dbms():
         sql="select * from PYK"
         cursor.execute(sql)
@@ -394,13 +390,11 @@ def newinsert():
             mycursor.execute(sql,val)
             mysqldb.commit()
             messagebox.showinfo("information","record inserted successfully")
-     
         except Exception as e:
             print(e)
             messagebox.showinfo("warning","invalid subject code")
             mysqldb.rollback()
             mysqldb.close()
-
     global e1,a1,b1,c1,d1,f1
     global e2,a2,b2,c2,d2,f2
     global e3,a3,b3,c3,d3,f3
@@ -485,7 +479,6 @@ def newinsert():
     d1.place(x=780,y=10)
     f1=Entry(root4)
     f1.place(x=930,y=10)
-
     e2=Entry(root4)
     e2.place(x=140,y=40)
     a2=Entry(root4)
@@ -498,8 +491,6 @@ def newinsert():
     d2.place(x=780,y=40)
     f2=Entry(root4)
     f2.place(x=930,y=40)
-
-
     e3=Entry(root4)
     e3.place(x=140,y=70)
     a3=Entry(root4)
@@ -512,8 +503,6 @@ def newinsert():
     d3.place(x=780,y=70)
     f3=Entry(root4)
     f3.place(x=930,y=70)
-
-
     e4=Entry(root4)
     e4.place(x=140,y=100)
     a4=Entry(root4)
@@ -526,7 +515,6 @@ def newinsert():
     d4.place(x=780,y=100)
     f4=Entry(root4)
     f4.place(x=930,y=100)
-
     e5=Entry(root4)
     e5.place(x=140,y=130)
     a5=Entry(root4)
@@ -539,7 +527,6 @@ def newinsert():
     d5.place(x=780,y=130)
     f5=Entry(root4)
     f5.place(x=930,y=130)
-
     e6=Entry(root4)
     e6.place(x=140,y=160)
     a6=Entry(root4)
@@ -552,7 +539,6 @@ def newinsert():
     d6.place(x=780,y=160)
     f6=Entry(root4)
     f6.place(x=930,y=160)
-
     e7=Entry(root4)
     e7.place(x=140,y=190)
     a7=Entry(root4)
@@ -565,7 +551,6 @@ def newinsert():
     d7.place(x=780,y=190)
     f7=Entry(root4)
     f7.place(x=930,y=190)
-
     e8=Entry(root4)
     e8.place(x=140,y=220)
     a8=Entry(root4)
@@ -579,67 +564,6 @@ def newinsert():
     f8=Entry(root4)
     f8.place(x=930,y=220)
     Button(root4,text="click here to insert",command=ok,height=3,width=20).place(x=100,y=300)
-
-    '''global h1,a1,b1,c1,d1,f1
-    global h2,a2,b2,c2,d2,f2
-    global h3,a3,b3,c3,d3,f3
-    global h4,a4,b4,c4,d4,f4
-    global h5,a5,b5,c5,d5,f5
-    global h6,a6,b6,c6,d6,f6
-    global h7,a7,b7,c7,d7,f7
-    global h8,a8,b8,c8,d8,f8
-    a1=StringVar()
-    b1=StringVar()
-    c1=StringVar()
-    d1=StringVar()
-    f1=StringVar()
-    a2=StringVar()
-    b2=StringVar()
-    c2=StringVar()
-    d2=StringVar()
-    f2=StringVar()
-    h1=StringVar()
-    h2=StringVar()
-    a3=StringVar()
-    b3=StringVar()
-    c3=StringVar()
-    d3=StringVar()
-    h3=StringVar()
-    f3=StringVar()
-    a4=StringVar()
-    b4=StringVar()
-    c4=StringVar()
-    d4=StringVar()
-    h4=StringVar()
-    f4=StringVar()
-    a5=StringVar()
-    b5=StringVar()
-    c5=StringVar()
-    d5=StringVar()
-    h5=StringVar()
-    f5=StringVar()
-    a6=StringVar()
-    b6=StringVar()
-    c6=StringVar()
-    d6=StringVar()
-    h6=StringVar()
-    f6=StringVar()
-    a7=StringVar()
-    b7=StringVar()
-    c7=StringVar()
-    d7=StringVar()
-    h7=StringVar()
-    f7=StringVar()
-    a8=StringVar()
-    b8=StringVar()
-    c8=StringVar()
-    d8=StringVar()
-    h8=StringVar()
-    f8=StringVar()
-    def c_des():'''
-         
-     
-
     def displaytt():
         sql="select * from semester_5"
         cursor.execute(sql)
@@ -679,13 +603,11 @@ def newinsert():
           cursor.execute(sql)
           mysqldb.commit()
           messagebox.showinfo("Information","deletion succesful")
-
         except Exception as e:
             print(e)
             messagebox.showinfo("warning","deletion failed")
             mysqldb.rollback()
             mysqldb.close()
-
     deleteButton = Button(root4,text="DELETE",command=delll).place(x=500,y=300)
 createButton = Button(root,text='INSERT and  DISPLAY FOR SEM5',command=newinsert).place(x=100,y=400)
 def newinsert2():
@@ -843,15 +765,12 @@ def newinsert2():
     mycursor=mysqldb.cursor()
     mycursor.execute("select subcode from sub7")
     res=mycursor.fetchall()
-
-    
     Label(roota,text="10 to 11").place(x=10,y=70)
     Label(roota,text="11 to 12").place(x=10,y=100)
     Label(roota,text="12 to 1").place(x=10,y=130)
     Label(roota,text="2 to 3").place(x=10,y=160)
     Label(roota,text="3 to 4").place(x=10,y=190)
     Label(roota,text="4 to 5").place(x=10,y=220)
-    
     e1=Entry(roota)
     e1.place(x=140,y=10)
     a1=Entry(roota)
@@ -864,7 +783,6 @@ def newinsert2():
     d1.place(x=780,y=10)
     f1=Entry(roota)
     f1.place(x=930,y=10)
-
     e2=Entry(roota)
     e2.place(x=140,y=40)
     a2=Entry(roota)
@@ -877,8 +795,6 @@ def newinsert2():
     d2.place(x=780,y=40)
     f2=Entry(roota)
     f2.place(x=930,y=40)
-
-
     e3=Entry(roota)
     e3.place(x=140,y=70)
     a3=Entry(roota)
@@ -891,8 +807,6 @@ def newinsert2():
     d3.place(x=780,y=70)
     f3=Entry(roota)
     f3.place(x=930,y=70)
-
-
     e4=Entry(roota)
     e4.place(x=140,y=100)
     a4=Entry(roota)
@@ -905,7 +819,6 @@ def newinsert2():
     d4.place(x=780,y=100)
     f4=Entry(roota)
     f4.place(x=930,y=100)
-
     e5=Entry(roota)
     e5.place(x=140,y=130)
     a5=Entry(roota)
@@ -918,7 +831,6 @@ def newinsert2():
     d5.place(x=780,y=130)
     f5=Entry(roota)
     f5.place(x=930,y=130)
-
     e6=Entry(roota)
     e6.place(x=140,y=160)
     a6=Entry(roota)
@@ -931,7 +843,6 @@ def newinsert2():
     d6.place(x=780,y=160)
     f6=Entry(roota)
     f6.place(x=930,y=160)
-
     e7=Entry(roota)
     e7.place(x=140,y=190)
     a7=Entry(roota)
@@ -944,7 +855,6 @@ def newinsert2():
     d7.place(x=780,y=190)
     f7=Entry(roota)
     f7.place(x=930,y=190)
-
     e8=Entry(roota)
     e8.place(x=140,y=220)
     a8=Entry(roota)
@@ -1008,156 +918,6 @@ def newinsert2():
     deleteButton = Button(roota,text="DELETE",command=delll).place(x=500,y=300)
 createButton2 = Button(root,text='INSERT and  DISPLAY FOR SEM7',command=newinsert2).place(x=100,y=450)
 root.mainloop()
-"""e1=Entry(root4)
-    e1.place(x=140,y=10)
-    a1=Entry(root4)
-    a1.place(x=300,y=10)
-    b1=Entry(root4) 
-    b1.place(x=460,y=10)
-    c1=Entry(root4)
-    c1.place(x=620,y=10)
-    d1=Entry(root4)
-    d1.place(x=780,y=10)
-    f1=Entry(root4)
-    f1.place(x=930,y=10)
-
-    e2=Entry(root4)
-    e2.place(x=140,y=40)
-    a2=Entry(root4)
-    a2.place(x=300,y=40)
-    b2=Entry(root4)
-    b2.place(x=460,y=40)
-    c2=Entry(root4)
-    c2.place(x=620,y=40)
-    d2=Entry(root4)
-    d2.place(x=780,y=40)
-    f2=Entry(root4)
-    f2.place(x=930,y=40)
-
-
-    e3=Entry(root4)
-    e3.place(x=140,y=70)
-    a3=Entry(root4)
-    a3.place(x=300,y=70)
-    b3=Entry(root4)
-    b3.place(x=460,y=70)
-    c3=Entry(root4)
-    c3.place(x=620,y=70)
-    d3=Entry(root4)
-    d3.place(x=780,y=70)
-    f3=Entry(root4)
-    f3.place(x=930,y=70)
-
-
-    e4=Entry(root4)
-    e4.place(x=140,y=100)
-    a4=Entry(root4)
-    a4.place(x=300,y=100)
-    b4=Entry(root4)
-    b4.place(x=460,y=100)
-    c4=Entry(root4)
-    c4.place(x=620,y=100)
-    d4=Entry(root4)
-    d4.place(x=780,y=100)
-    f4=Entry(root4)
-    f4.place(x=930,y=100)
-
-    e5=Entry(root4)
-    e5.place(x=140,y=130)
-    a5=Entry(root4)
-    a5.place(x=300,y=130)
-    b5=Entry(root4)  
-    b5.place(x=460,y=130)
-    c5=Entry(root4)
-    c5.place(x=620,y=130)
-    d5=Entry(root4)
-    d5.place(x=780,y=130)
-    f5=Entry(root4)
-    f5.place(x=930,y=130)
-
-    e6=Entry(root4)
-    e6.place(x=140,y=160)
-    a6=Entry(root4)
-    a6.place(x=300,y=160)
-    b6=Entry(root4)
-    b6.place(x=460,y=160)
-    c6=Entry(root4)
-    c6.place(x=620,y=160)
-    d6=Entry(root4)
-    d6.place(x=780,y=160)
-    f6=Entry(root4)
-    f6.place(x=930,y=160)
-
-    e7=Entry(root4)
-    e7.place(x=140,y=190)
-    a7=Entry(root4)
-    a7.place(x=300,y=190)
-    b7=Entry(root4)
-    b7.place(x=460,y=190)
-    c7=Entry(root4)
-    c7.place(x=620,y=190)
-    d7=Entry(root4)
-    d7.place(x=780,y=190)
-    f7=Entry(root4)
-    f7.place(x=930,y=190)
-
-    e8=Entry(root4)
-    e8.place(x=140,y=220)
-    a8=Entry(root4)
-    a8.place(x=300,y=220)
-    b8=Entry(root4)
-    b8.place(x=460,y=220)
-    c8=Entry(root4)
-    c8.place(x=620,y=220)
-    d8=Entry(root4)
-    d8.place(x=780,y=220)
-    f8=Entry(root4)
-    f8.place(x=930,y=220)"""
-
-'''c=ttk.Combobox(roota,textvariable=e2)
-    c['values']=res
-    c.place(x=140,y=40)
-    c=ttk.Combobox(roota,values=res,textvariable=a2).place(x=300,y=40)
-    c=ttk.Combobox(roota,values=res,textvariable=b2).place(x=460,y=40)
-    c=ttk.Combobox(roota,values=res,textvariable=c2).place(x=620,y=40) 
-    c=ttk.Combobox(roota,values=res,textvariable=d2).place(x=780,y=40) 
-    c=ttk.Combobox(roota,values=res,textvariable=f2).place(x=930,y=40) 
-    c=ttk.Combobox(roota,values=res,textvariable=e3).place(x=140,y=70) 
-    c=ttk.Combobox(roota,values=res,textvariable=a3).place(x=300,y=70)
-    c=ttk.Combobox(roota,values=res,textvariable=b3).place(x=460,y=70) 
-    c=ttk.Combobox(roota,values=res,textvariable=c3).place(x=620,y=70) 
-    c=ttk.Combobox(roota,values=res,textvariable=d3).place(x=780,y=70) 
-    c=ttk.Combobox(roota,values=res,textvariable=f3).place(x=930,y=70)  
-    c=ttk.Combobox(roota,values=res,textvariable=e4).place(x=140,y=100)
-    c=ttk.Combobox(roota,values=res,textvariable=a4).place(x=300,y=100) 
-    c=ttk.Combobox(roota,values=res,textvariable=b4).place(x=460,y=100)
-    c=ttk.Combobox(roota,values=res,textvariable=c4).place(x=620,y=100)
-    c=ttk.Combobox(roota,values=res,textvariable=d4).place(x=780,y=100)
-    c=ttk.Combobox(roota,values=res,textvariable=f4).place(x=930,y=100)
-    c=ttk.Combobox(roota,values=res,textvariable=e5).place(x=140,y=130)
-    c=ttk.Combobox(roota,values=res,textvariable=a5).place(x=300,y=130)
-    c=ttk.Combobox(roota,values=res,textvariable=b5).place(x=460,y=130)
-    c=ttk.Combobox(roota,values=res,textvariable=c5).place(x=620,y=130)  
-    c=ttk.Combobox(roota,values=res,textvariable=d5).place(x=780,y=130)  
-    c=ttk.Combobox(roota,values=res,textvariable=f5).place(x=930,y=130) 
-    c=ttk.Combobox(roota,values=res,textvariable=e6).place(x=140,y=160) 
-    c=ttk.Combobox(roota,values=res,textvariable=a6).place(x=300,y=160)
-    c=ttk.Combobox(roota,values=res,textvariable=b6).place(x=460,y=160)  
-    c=ttk.Combobox(roota,values=res,textvariable=c6).place(x=620,y=160) 
-    c=ttk.Combobox(roota,values=res,textvariable=d6).place(x=780,y=160) 
-    c=ttk.Combobox(roota,values=res,textvariable=f6).place(x=930,y=160) 
-    c=ttk.Combobox(roota,values=res,textvariable=e7).place(x=140,y=190)
-    c=ttk.Combobox(roota,values=res,textvariable=a7).place(x=300,y=190) 
-    c=ttk.Combobox(roota,values=res,textvariable=b7).place(x=460,y=190) 
-    c=ttk.Combobox(roota,values=res,textvariable=c7).place(x=620,y=190) 
-    c=ttk.Combobox(roota,values=res,textvariable=d7).place(x=780,y=190) 
-    c=ttk.Combobox(roota,values=res,textvariable=f7).place(x=930,y=190)
-    c=ttk.Combobox(roota,values=res,textvariable=e8).place(x=140,y=220)
-    c=ttk.Combobox(roota,values=res,textvariable=a8).place(x=300,y=220)
-    c=ttk.Combobox(roota,values=res,textvariable=b8).place(x=460,y=220)
-    c=ttk.Combobox(roota,values=res,textvariable=c8).place(x=620,y=220)
-    c=ttk.Combobox(roota,values=res,textvariable=d8).place(x=780,y=220)
-    c=ttk.Combobox(roota,values=res,textvariable=f8).place(x=930,y=220)'''
 
 
 
